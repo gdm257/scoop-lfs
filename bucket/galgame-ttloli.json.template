@@ -5,7 +5,7 @@
     "homepage": "https://www.ttloli.com",
     "license": "Unknown",
     "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
-    "depends": ["main/7zip"],
+    "depends": ["main/7zip", "main/rclone"],
     "installer": {
         "script": [
             "$id = '<ID>'",
