@@ -25,7 +25,7 @@ This repository is a Scoop bucket for managing software package manifests. Agent
 
 ### Manifest Generation
 
-- **Generate TTLoli manifests**: `pwsh bin/generate-ttloli-manifests.ps1`
+- **Generate TTLoli manifests**: `pwsh scripts/generate-ttloli-manifests.ps1`
     - Default: Skip existing manifests
     - `-Overwrite`: Overwrite all existing manifests
     - `-IgnoreList`: Array of IDs to skip (e.g., `-IgnoreList 'A001','B005'`)
@@ -109,13 +109,6 @@ if (!$env:SCOOP_HOME) { $env:SCOOP_HOME = Convert-Path (scoop prefix scoop) }
 - `app-name.json.template` - Standard application manifest
 - `galgame-ttloli.json.template` - Specialized LFS-based installer
 
-### CI/CD Notes
-
-- Tests run on both Windows PowerShell and PowerShell Core
-- CI triggered on push to main/master and pull requests
-- Use workflow_dispatch for manual CI triggers
-- Scoop core is checked out as `scoop_core` in CI
-
 ### LFS Integration
 
 - Some manifests use LFS (Large File Storage) via rclone
@@ -129,7 +122,6 @@ if (!$env:SCOOP_HOME) { $env:SCOOP_HOME = Convert-Path (scoop prefix scoop) }
 - `bin/` - Utility scripts (PowerShell)
 - `scripts/` - Helper scripts
 - `.vscode/` - Editor settings and PSScriptAnalyzer config
-- `.github/workflows/` - CI/CD workflows
 
 ### VS Code Configuration
 
