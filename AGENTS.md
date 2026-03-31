@@ -23,6 +23,15 @@ This repository is a Scoop bucket for managing software package manifests. Agent
 - **Format JSON**: `pwsh bin/formatjson.ps1`
 - **Find missing checkver**: `pwsh bin/missing-checkver.ps1`
 
+### Manifest Generation
+
+- **Generate TTLoli manifests**: `pwsh bin/generate-ttloli-manifests.ps1`
+    - Default: Skip existing manifests
+    - `-Overwrite`: Overwrite all existing manifests
+    - `-IgnoreList`: Array of IDs to skip (e.g., `-IgnoreList 'A001','B005'`)
+    - Template: Uses `bucket/galgame-ttloli.json.template`
+    - Replaces `<ID>` placeholder with actual IDs (A001-A672, B001-B053)
+
 ### Environment Setup
 
 ```pwsh
@@ -98,7 +107,7 @@ if (!$env:SCOOP_HOME) { $env:SCOOP_HOME = Convert-Path (scoop prefix scoop) }
 
 - Use templates in `bucket/` directory as starting points
 - `app-name.json.template` - Standard application manifest
-- `galgame-ttloli-template.json` - Specialized LFS-based installer
+- `galgame-ttloli.json.template` - Specialized LFS-based installer
 
 ### CI/CD Notes
 
