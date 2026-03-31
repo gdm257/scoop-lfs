@@ -10,17 +10,10 @@ $ErrorActionPreference = 'Stop'
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $bucketDir = Join-Path $repoRoot 'bucket'
-$docsDir = Join-Path $repoRoot 'docs'
 $templatePath = Join-Path $bucketDir 'galgame-ttloli.json.template'
-$ttloliDocPath = Join-Path $docsDir 'ttloli.md'
 
 if (-not (Test-Path $templatePath)) {
     Write-Error "Template file not found: $templatePath"
-    exit 1
-}
-
-if (-not (Test-Path $ttloliDocPath)) {
-    Write-Error "TTLoli doc file not found: $ttloliDocPath"
     exit 1
 }
 
