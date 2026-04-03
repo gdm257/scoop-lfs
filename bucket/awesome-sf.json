@@ -1,0 +1,15 @@
+{
+    "$schema": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
+    "version": "latest",
+    "description": "SoundFont",
+    "homepage": "https://en.wikipedia.org/wiki/SoundFont",
+    "license": "Unknown",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+    "depends": ["main/rclone"],
+    "installer": {
+        "script": [
+            "rclone copy \"lfs:awesome-sf\" \"$persist_dir/data\" --size-only"
+        ]
+    },
+    "persist": ["data"]
+}
