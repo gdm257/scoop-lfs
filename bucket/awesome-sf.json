@@ -6,10 +6,8 @@
     "license": "Unknown",
     "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
     "depends": ["main/rclone"],
-    "installer": {
-        "script": [
-            "rclone copy \"lfs:awesome-sf\" \"$persist_dir/data\" --size-only"
-        ]
-    },
-    "persist": ["data"]
+    "persist": ["data"],
+    "post_install": [
+        "rclone copy \"lfs:awesome-sf\" \"$persist_dir/data\" --ignore-existing --size-only --multi-thread-streams 1 -v"
+    ]
 }
